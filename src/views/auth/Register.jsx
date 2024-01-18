@@ -1,3 +1,8 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
+
 
 
 const Register = () => {
@@ -11,9 +16,9 @@ const Register = () => {
 
 
     return (
-        <div className="pb-40">
+        <div className="pb-40 m-auto w-2/4">
             <div className="grid grid-cols-2 gap-x-6">
-                <div className="pr-10 border-[1px] border-[#D0D0D0] w-[611px] h-[790px] mt-20 px-20 bg-white rounded shadow-md">
+                <div className="pr-10 border-[1px] border-[#D0D0D0] w-[611px] h-[820px] mt-20 px-20 bg-white rounded shadow-md">
                     <h2 className="text-4xl font-semibold text-center pt-16 pb-8 text-black">Registration</h2>
                     <form onSubmit={handleRegister} className="mt-4">
 
@@ -67,8 +72,26 @@ const Register = () => {
                         </div>
                     </form>
                     <div>
-                        <p className="text-center pt-10">Already Have an Account? <Link to="/logIn" className='text-[#FF3811]'>Login</Link></p>
+                        <p className="text-center pt-5 mb-4">Already Have an Account? <Link to="/signIn" className='text-[#FF3811]'>Sign in</Link></p>
                     </div>
+
+                    <div className='w-[461px] flex flex justify-center items-center mb-3'>
+                        <div className='w-[45%] bg-[#FF3811] h-[1px]'></div>
+                        <div className='w-[10%] flex justify-center items-center'>
+                            <span className='pb-1'>Or</span>
+                        </div>
+                        <div className='w-[45%] bg-[#FF3811] h-[1px]'></div>
+                    </div>
+
+                    <div className='w-[461px] flex justify-center items-center'>
+                        <div className='flex gap-4'>
+                            <FontAwesomeIcon icon={faGoogle} size="2x" style={{ color: '#4285F4' }} />
+                            <FontAwesomeIcon icon={faFacebook} size="2x" style={{ color: '#1877F2' }} />
+                        </div>
+
+                    </div>
+
+
                 </div>
             </div>
         </div>

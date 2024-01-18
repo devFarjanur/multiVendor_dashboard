@@ -51,9 +51,12 @@ const Login = () => {
                                 type="submit"
                                 className="w-[461px] h-[64px] bg-[#FF3811] hover:bg-[#FF3811] text-white text-xl font-semibold rounded-md"
                             >
-                                Log In
+                                Sign In
                             </button>
                         </div>
+
+                        
+
                     </form>
                 </div>
             </div>
