@@ -72,10 +72,10 @@ const Register = () => {
                         </div>
                     </form>
                     <div>
-                        <p className="text-center pt-5 mb-4">Already Have an Account? <Link to="/signIn" className='text-[#FF3811]'>Sign in</Link></p>
+                        <p className="text-center pt-5 mb-5">Already Have an Account? <Link to="/login" className='text-[#FF3811]'>Sign in</Link></p>
                     </div>
 
-                    <div className='w-[461px] flex flex justify-center items-center mb-3'>
+                    <div className='w-[461px] flex flex justify-center items-center mb-5'>
                         <div className='w-[45%] bg-[#FF3811] h-[1px]'></div>
                         <div className='w-[10%] flex justify-center items-center'>
                             <span className='pb-1'>Or</span>
