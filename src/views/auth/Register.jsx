@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
@@ -7,8 +7,22 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
 
-    const handleRegister = event => {
+    const [state, setState] = useState({
+        name: '',
+        email: '',
+        password: ''
+    })
 
+    const inputHandle = (event) => {
+        setState({
+            ...state,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const handleRegister = event => {
+        event.preventDefault()
+        console.log(state)
     }
 
 
@@ -27,6 +41,8 @@ const Register = () => {
                                 Name
                             </label>
                             <input
+                                onChange={inputHandle}
+                                value={state.name}
                                 type="text"
                                 id="name"
                                 name="name"
@@ -40,6 +56,8 @@ const Register = () => {
                                 Email
                             </label>
                             <input
+                                onChange={inputHandle}
+                                value={state.email}
                                 type="email"
                                 id="email"
                                 name="email"
@@ -53,6 +71,8 @@ const Register = () => {
                                 Password
                             </label>
                             <input
+                                onChange={inputHandle}
+                                value={state.password}
                                 type="password"
                                 id="password"
                                 name="password"

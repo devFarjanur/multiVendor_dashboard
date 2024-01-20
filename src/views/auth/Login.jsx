@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
@@ -6,12 +6,25 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
 
-    const handleResetPassword = event => {
+    const [state, setState] = useState({
+        email: '',
+        password: ''
+    })
+
+    const inputHandle = (event) => {
+        setState({
+            ...state,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const handleResetPassword = () => {
 
     }
 
     const handleLogin = event => {
-
+        event.preventDefault()
+        console.log(state)
     }
 
     return (
@@ -25,6 +38,8 @@ const Login = () => {
                                 Email
                             </label>
                             <input
+                                onChange={inputHandle}
+                                value={state.email}
                                 type="email"
                                 id="email"
                                 name="email"
@@ -38,6 +53,8 @@ const Login = () => {
                                 Password
                             </label>
                             <input
+                                onChange={inputHandle}
+                                value={state.password}
                                 type="password"
                                 id="password"
                                 name="password"
